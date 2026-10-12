@@ -1,0 +1,4 @@
+corner,temp_c,vdd,metric,value
+TT,27,1.0,read_snm,
+TT,27,1.0,hold_snm,
+TT,27,1.0,write_snm,

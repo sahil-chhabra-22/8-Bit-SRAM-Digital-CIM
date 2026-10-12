@@ -1,0 +1,17 @@
+// TEMPLATE - read butterfly: one inverter VTC with pass-gate loading (WL=VDD, BL=VDD)
+// Repeat with Q/QB roles swapped for the second VTC. Hold: set Vwl = 0.
+simulator lang=spectre
+include "<PDK_MODEL_FILE>" section=<SECTION>
+
+parameters vdd=1.2 wp=200n wn=300n wg=150n l=60n
+
+Vdd (vdd 0) vsource dc=vdd
+Vwl (wl 0) vsource dc=vdd
+Vbl (bl 0) vsource dc=vdd
+Vin (q 0) vsource dc=0
+
+MPU (qb q vdd vdd) pch w=wp l=l
+MPD (qb q 0 0)     nch w=wn l=l
+MPG (qb wl bl 0)   nch w=wg l=l
+
+sweep dc param=dc dev=Vin start=0 stop=vdd step=5m

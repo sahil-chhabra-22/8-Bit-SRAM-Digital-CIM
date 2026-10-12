@@ -1,0 +1,23 @@
+;; TEMPLATE OCEAN script - adapt paths, test names and variables to your project.
+simulator('spectre)
+design("<path/to/netlist>")
+resultsDir("./simulation/pvt")
+
+corners = '("tt" "ff" "ss" "fs" "sf")
+temps   = '(10 20 30 40 50)
+vdds    = '(1.1 1.2 1.3)
+
+fp = outfile("../../data/pvt_raw.csv" "w")
+fprintf(fp "corner,temp_c,vdd,metric,value\n")
+foreach(c corners
+  foreach(t temps
+    foreach(v vdds
+      modelFile(list("<PDK_MODEL_FILE>" c))
+      temp(t)
+      desVar("vdd" v)
+      analysis('dc ?param "dc" ?start 0 ?stop v ?step 0.005)
+      run()
+      ;; export VTC/N-curve data, compute margins with the Python scripts, then append rows:
+      ;; fprintf(fp "%s,%g,%g,read_snm,%g\n" c t v value)
+    )))
+close(fp)

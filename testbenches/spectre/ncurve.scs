@@ -1,0 +1,20 @@
+// TEMPLATE - N-curve: force node Q with Vin, export current into Q (-I(Vin:p) sign per your convention).
+simulator lang=spectre
+include "<PDK_MODEL_FILE>" section=<SECTION>
+
+parameters vdd=1.2 wp=200n wn=300n wg=150n l=60n
+
+Vdd (vdd 0) vsource dc=vdd
+Vwl (wl 0) vsource dc=vdd
+Vbl (bl 0) vsource dc=vdd
+Vblb (blb 0) vsource dc=vdd
+Vin (q 0) vsource dc=0
+
+MPU1 (qb q vdd vdd) pch w=wp l=l
+MPD1 (qb q 0 0)    nch w=wn l=l
+MPU2 (q qb vdd vdd) pch w=wp l=l
+MPD2 (q qb 0 0)    nch w=wn l=l
+MPG1 (q wl bl 0)   nch w=wg l=l
+MPG2 (qb wl blb 0) nch w=wg l=l
+
+sweep dc param=dc dev=Vin start=0 stop=vdd step=2m

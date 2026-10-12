@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Stability and PVT Analysis of the FlexDCIM SRAM Bit-Cell (TSMC 65 nm)"
+message: "If you use this work, please cite it as below."
+type: software
+authors:
+  - family-names: Chhabra
+    given-names: Sahil
+license: MIT
+date-released: 2026-07-31
+abstract: "Hold, read and write-mode SNM (butterfly), N-curve tooling, DPU transient verification and PVT analysis of the FlexDCIM digital compute-in-memory SRAM cell in Cadence Virtuoso, TSMC 65 nm, with an unsigned 8-bit MAC golden model."
