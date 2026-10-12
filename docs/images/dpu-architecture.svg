@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+<rect width="1200" height="560" rx="24" fill="#0b1220"/>
+<text x="60" y="58" fill="#f8fafc" font-family="Arial,sans-serif" font-size="30" font-weight="700">SRAM Digital Compute-in-Memory — DPU Overview</text>
+<text x="60" y="91" fill="#9ca3af" font-family="Arial,sans-serif" font-size="17">Conceptual block diagram based on the project presentation; not a transistor-level schematic.</text>
+<rect x="70" y="145" width="310" height="230" rx="16" fill="#14233b" stroke="#60a5fa" stroke-width="2"/>
+<text x="225" y="182" fill="#bfdbfe" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700">SRAM Storage</text>
+<rect x="120" y="210" width="210" height="105" rx="10" fill="#1e3a5f" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="225" y="247" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700">8T Bit-Cell</text>
+<text x="225" y="278" fill="#dbeafe" text-anchor="middle" font-family="Arial,sans-serif" font-size="18">Q / QB</text>
+<text x="225" y="345" fill="#cbd5e1" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">WL · BLB · RWL</text>
+<path d="M380 260 H465" stroke="#fbbf24" stroke-width="4" fill="none"/><path d="M451 248 L465 260 L451 272" stroke="#fbbf24" stroke-width="4" fill="none"/>
+<text x="423" y="239" fill="#fde68a" text-anchor="middle" font-family="Arial,sans-serif" font-size="15">Stored bit</text>
+<rect x="465" y="145" width="300" height="230" rx="16" fill="#172b22" stroke="#4ade80" stroke-width="2"/>
+<text x="615" y="182" fill="#bbf7d0" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700">Digital Compute</text>
+<rect x="515" y="210" width="200" height="105" rx="10" fill="#204b36" stroke="#86efac" stroke-width="1.5"/>
+<text x="615" y="248" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="700">Logic Slice</text>
+<text x="615" y="278" fill="#dcfce7" text-anchor="middle" font-family="Arial,sans-serif" font-size="17">WS · EN</text>
+<text x="615" y="345" fill="#d1fae5" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Control / evaluate</text>
+<path d="M765 260 H850" stroke="#fbbf24" stroke-width="4" fill="none"/><path d="M836 248 L850 260 L836 272" stroke="#fbbf24" stroke-width="4" fill="none"/>
+<rect x="850" y="190" width="270" height="140" rx="16" fill="#3b1e2a" stroke="#fb7185" stroke-width="2"/>
+<text x="985" y="230" fill="#fecdd3" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" font-weight="700">Compute Output</text>
+<text x="985" y="270" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="24" font-weight="700">CBL</text>
+<text x="985" y="300" fill="#ffe4e6" text-anchor="middle" font-family="Arial,sans-serif" font-size="16">Transient observation</text>
+<rect x="70" y="420" width="1050" height="80" rx="12" fill="#111c30" stroke="#334155"/>
+<text x="95" y="451" fill="#e2e8f0" font-family="Arial,sans-serif" font-size="18" font-weight="700">Validation workflow</text>
+<text x="95" y="480" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="17">Cadence Virtuoso schematic → Spectre transient / DC → ADE waveform inspection → butterfly-curve SNM → PVT corner comparison</text>
+</svg>
