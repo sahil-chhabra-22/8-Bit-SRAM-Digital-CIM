@@ -56,7 +56,7 @@ The image below shows the original Cadence Virtuoso schematic.
 
 ![Original Cadence Virtuoso UNO DPU schematic](Picture1.jpg)
 
-The schematic screenshot is the supplied Cadence Virtuoso DPU schematic. Signal names and connectivity should be read from the source schematic itself.
+The schematic screenshot is the supplied Cadence Virtuoso DPU schematic.
 
 The project material also includes a circuit-level transient screenshot pair for the stored states **Q = 0** and **Q = 1**.
 ![Transient simulation screenshot for Q = 0](Screenshot%202026-10-13%20024205.png)
