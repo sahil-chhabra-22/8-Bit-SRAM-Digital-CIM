@@ -21,15 +21,13 @@ In a conventional processor-memory system, moving data between memory and comput
 
 This project examines a DPU-style cell from the FlexDCIM architecture and studies both compute-path behaviour and SRAM storage stability.
 
-## Circuit architecture
+## Original circuit schematic
 
-![SRAM DPU architecture](docs/images/dpu-architecture.svg)
+The image below is taken from the supplied project presentation and shows the original Cadence Virtuoso schematic—not an AI-generated redraw.
 
-The conceptual block diagram separates the SRAM storage section, digital compute logic and compute output. It is a documentation diagram, not a transistor-level Cadence schematic.
+![Original Cadence Virtuoso UNO DPU schematic](docs/images/cadence-uno-dpu-schematic.jpg)
 
-![Functional schematic view](docs/images/sram-dpu-functional-view.svg)
-
-The functional view summarizes the signal groups used in the presentation. For the actual device-level circuit, see the Cadence schematic image in the project presentation; the SVG above is explicitly illustrative.
+The schematic screenshot is from the “UNO DPU schematic” view in Cadence Virtuoso. Signal names and connectivity should be read from the source schematic itself.
 
 | Signal | Role in the presented testbench |
 |---|---|
