@@ -21,13 +21,35 @@ In a conventional processor-memory system, moving data between memory and comput
 
 This project examines a DPU-style cell from the FlexDCIM architecture and studies both compute-path behaviour and SRAM storage stability.
 
+### Three compute-in-memory approaches
+
+The supplied architecture figure contrasts an **all-digital** approach (SRAM plus a separate digital processing element), a **near-memory** approach (computation close to the SRAM array), and an **in-memory** approach (the array participates in computing with a mixed-signal readout). This is reference context for the design space, not a claim that all three architectures were implemented in this project.
+
+![All-digital, near-memory and in-memory computing comparison](Screenshot%202026-10-13%20024333.png)
+
+### SRAM bit-cell and compute logic
+
+The supplied bit-cell figure separates the **8T SRAM bit-cell** from the **digital logic** section and labels the internal storage, word-line, bit-line and enable/compute connections. It helps show how storage and compute circuitry are organized at the cell level.
+
+![8T SRAM bit-cell and digital logic](Screenshot%202026-10-13%20024205.png)
+
+The wider array-level diagram below illustrates SRAM blocks, bit-line driver/pre-charge, CIM/SRAM drivers, binary-adder trees and accumulators. It is included as architecture context from the supplied project material; its reported macro-level specifications should not be read as measurements from this repository's circuit simulations.
+
+![SRAM compute-in-memory array architecture](Screenshot%202026-10-13%20024244.png)
+
 ## Original circuit schematic
 
 The image below is taken from the supplied project presentation and shows the original Cadence Virtuoso schematic—not an AI-generated redraw.
 
-![Original Cadence Virtuoso UNO DPU schematic](docs/images/cadence-uno-dpu-schematic.jpg)
+![Original Cadence Virtuoso UNO DPU schematic](Picture1.jpg)
 
-The schematic screenshot is from the “UNO DPU schematic” view in Cadence Virtuoso. Signal names and connectivity should be read from the source schematic itself.
+The schematic screenshot is the supplied Cadence Virtuoso UNO DPU schematic. Signal names and connectivity should be read from the source schematic itself.
+
+The project material also includes a circuit-level transient screenshot pair for the stored states **Q = 0** and **Q = 1**. These are original supplied screenshots and are intended as visual evidence alongside the transient-verification method below.
+
+![Transient simulation screenshot for Q = 0](Screenshot%202026-10-13%20024205.png)
+
+![Transient simulation screenshot for Q = 1](Screenshot%202026-10-13%20024244.png)
 
 | Signal | Role in the presented testbench |
 |---|---|
@@ -131,7 +153,7 @@ See [full PVT tables and notes](docs/pvt-analysis.md) for the detailed methodolo
 
 - Complete and document the full WS × Q truth-table sweep.
 - Clearly separate measured simulation output from estimated or interpolated values.
-- Add high-resolution screenshots of the actual Cadence schematic and transient/SNM plots from the project presentation.
+- Add further high-resolution transient and SNM screenshots where the original simulation exports are available.
 - If layout and extracted-view verification are completed, include the corresponding layout, DRC/LVS and post-layout evidence; otherwise list them as future work.
 
 ## References
