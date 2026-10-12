@@ -1,8 +1,21 @@
+<div align="center">
+
 # SRAM-Based Digital Compute-in-Memory (FlexDCIM)
 
-**Cadence Virtuoso · Spectre · SRAM Bit-Cell Analysis · PVT Characterization**
+### 8-Bit SRAM Digital Compute-in-Memory Design & Analysis
 
-A VLSI design and simulation project focused on a FlexDCIM-style SRAM Digital Processing Unit (DPU), including schematic-level transient verification and SRAM stability analysis using static noise margin (SNM).
+<p>
+  <img src="https://img.shields.io/badge/EDA-Cadence%20Virtuoso-5B2C91?style=for-the-badge" alt="EDA: Cadence Virtuoso" />
+  <img src="https://img.shields.io/badge/Technology-TSMC%2065%20nm-0E9AA7?style=for-the-badge" alt="Technology: TSMC 65 nm" />
+  <img src="https://img.shields.io/badge/Analysis-Spectre%20Transient-365486?style=for-the-badge" alt="Analysis: Spectre transient" />
+  <img src="https://img.shields.io/badge/SRAM%20Stability-Hold%20%7C%20Read%20%7C%20Write-147D64?style=for-the-badge" alt="SRAM stability: hold, read and write" />
+</p>
+
+**Circuit-level design and simulation of an SRAM-based digital compute-in-memory processing unit, with transient-state verification and hold/read/write static-noise-margin characterization across process corners and supply voltages.**
+
+</div>
+
+---
 
 > **Scope note:** This repository documents the circuit implementation and analyses described in the project materials. The full 64 Kb FlexDCIM macro and its published performance figures belong to the referenced research paper; they are not claims of a full-chip implementation in this repository.
 
