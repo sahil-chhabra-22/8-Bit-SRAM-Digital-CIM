@@ -39,14 +39,13 @@ The wider array-level diagram below illustrates SRAM blocks, bit-line driver/pre
 
 ## Original circuit schematic
 
-The image below is taken from the supplied project presentation and shows the original Cadence Virtuoso schematic—not an AI-generated redraw.
+The image below shows the original Cadence Virtuoso schematic.
 
 ![Original Cadence Virtuoso UNO DPU schematic](Picture1.jpg)
 
-The schematic screenshot is the supplied Cadence Virtuoso UNO DPU schematic. Signal names and connectivity should be read from the source schematic itself.
+The schematic screenshot is the supplied Cadence Virtuoso DPU schematic. Signal names and connectivity should be read from the source schematic itself.
 
-The project material also includes a circuit-level transient screenshot pair for the stored states **Q = 0** and **Q = 1**. These are original supplied screenshots and are intended as visual evidence alongside the transient-verification method below.
-
+The project material also includes a circuit-level transient screenshot pair for the stored states **Q = 0** and **Q = 1**.
 ![Transient simulation screenshot for Q = 0](Screenshot%202026-10-13%20024205.png)
 
 ![Transient simulation screenshot for Q = 1](Screenshot%202026-10-13%20024244.png)
