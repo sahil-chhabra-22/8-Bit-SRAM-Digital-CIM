@@ -23,7 +23,13 @@ This project examines a DPU-style cell from the FlexDCIM architecture and studie
 
 ## Circuit architecture
 
-The reference DPU combines an SRAM storage section with a digital logic section. The storage nodes retain the bit (Q / QB), while control signals select and time the compute path. The compute output is observed on CBL.
+![SRAM DPU architecture](docs/images/dpu-architecture.svg)
+
+The conceptual block diagram separates the SRAM storage section, digital compute logic and compute output. It is a documentation diagram, not a transistor-level Cadence schematic.
+
+![Functional schematic view](docs/images/sram-dpu-functional-view.svg)
+
+The functional view summarizes the signal groups used in the presentation. For the actual device-level circuit, see the Cadence schematic image in the project presentation; the SVG above is explicitly illustrative.
 
 | Signal | Role in the presented testbench |
 |---|---|
@@ -33,8 +39,6 @@ The reference DPU combines an SRAM storage section with a digital logic section.
 | RWL | Read/evaluation timing |
 | Q / QB | Complementary SRAM storage nodes |
 | CBL | Compute bit-line output |
-
-The project presentation includes the architecture, Cadence schematic and simulation waveforms. Technical figures should be actual circuit/simulation artefacts; conceptual illustrations should be labelled as illustrations.
 
 ## Methodology
 
@@ -56,17 +60,49 @@ The presented sweeps cover five process corners (TT, FF, SS, SF, FS), three supp
 
 ## Reported results
 
-The project presentation reports these SNM ranges across the evaluated corners and supply values:
+The PVT presentations provide worst-case SNM values across five process corners (TT, FF, SS, FS, SF) and supply voltages of 1.1 V, 1.2 V and 1.3 V. Each table summarizes the worst-case marker across the 10–50 °C temperature family.
 
-| Analysis | Reported SNM range | Lowest reported condition | Highest reported condition |
-|---|---:|---|---|
-| Hold | 0.452–0.788 V | SF, 1.1 V | FS, 1.3 V |
-| Read | 0.479–0.810 V* | SF, 1.1 V | FS, 1.3 V |
-| Write mode | 0.469–0.801 V | SF, 1.1 V | FS, 1.3 V |
+### Hold-mode SNM (V)
 
-The transient presentation reports six CBL output pulses for the shown Q = 1 case and four for the shown Q = 0 case. These are observations from the presented waveforms, not a substitute for a complete truth-table sweep.
+| Corner | 1.1 V | 1.2 V | 1.3 V |
+|---|---:|---:|---:|
+| TT | 0.520 | 0.622 | 0.720 |
+| FF | 0.529 | 0.629 | 0.729 |
+| SS | 0.531 | 0.631 | 0.731 |
+| FS | 0.589 | 0.688 | 0.788 |
+| SF | 0.452 | 0.558 | 0.658 |
 
-For corner-by-corner tables, waveform interpretation and open items, see [results notes](docs/results.md) and [methodology](docs/methodology.md).
+### Read-mode SNM (V)
+
+| Corner | 1.1 V | 1.2 V | 1.3 V |
+|---|---:|---:|---:|
+| TT | 0.528 | 0.633 | 0.733 |
+| FF | 0.546* | 0.646 | 0.746 |
+| SS | 0.530 | 0.630 | 0.730 |
+| FS | 0.608 | 0.709 | 0.810 |
+| SF | 0.479 | 0.579 | 0.679 |
+
+### Write-mode SNM (V)
+
+| Corner | 1.1 V | 1.2 V | 1.3 V |
+|---|---:|---:|---:|
+| TT | 0.529 | 0.629 | 0.729 |
+| FF | 0.539 | 0.639 | 0.739 |
+| SS | 0.532 | 0.632 | 0.732 |
+| FS | 0.601 | 0.701 | 0.801 |
+| SF | 0.469 | 0.569 | 0.639 |
+
+| Mode | Minimum SNM | Worst corner / supply | Maximum SNM | Best corner / supply |
+|---|---:|---|---:|---|
+| Hold | 0.452 V | SF / 1.1 V | 0.788 V | FS / 1.3 V |
+| Read | 0.479 V | SF / 1.1 V | 0.810 V | FS / 1.3 V |
+| Write | 0.469 V | SF / 1.1 V | 0.801 V | FS / 1.3 V |
+
+*The READ presentation labels FF at 1.1 V as trend-interpolated and pending direct simulation. Keep it marked as an estimate until direct simulation is complete.
+
+**Key observation:** SNM increases with supply voltage in all three datasets. SF (slow-NMOS / fast-PMOS) is the recurring worst-case corner; FS (fast-NMOS / slow-PMOS) is the recurring best-case corner.
+
+See [full PVT tables and notes](docs/pvt-analysis.md) for the detailed methodology and caveats.
 
 ## Tools and why they are used
 
