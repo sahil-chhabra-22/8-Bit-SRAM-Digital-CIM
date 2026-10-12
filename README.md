@@ -25,7 +25,7 @@ This project was carried out during a research internship at **IIT Roorkee**. It
 **FlexDCIM**, a fully digital compute-in-memory (CIM) macro, and verifies that the cell is stable and reliable enough
 to perform **unsigned 8-bit multiply-accumulate (MAC)** operations directly inside the memory array.
 
-The work covers a single FlexDCIM-style DPU bit-cell (the "UNO DPU" schematic) in **Cadence Virtuoso on the TSMC 65 nm node**: transient
+The work covers a single FlexDCIM-style DPU bit-cell in **Cadence Virtuoso on the TSMC 65 nm node**: transient
 verification of its multiply behaviour, **butterfly-curve SNM for hold, read and write-mode operation**, and a **PVT sweep** over five process corners,
 three supply voltages and five temperatures (75 simulations per mode). Python tooling in this repo post-processes the data, includes N-curve extraction,
 and provides a bit-accurate model of the unsigned 8-bit MAC pipeline.
