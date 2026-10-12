@@ -64,8 +64,6 @@ The project presentation reports these SNM ranges across the evaluated corners a
 | Read | 0.479–0.810 V* | SF, 1.1 V | FS, 1.3 V |
 | Write mode | 0.469–0.801 V | SF, 1.1 V | FS, 1.3 V |
 
-*The source presentation identifies the FF-corner result at 1.1 V as an estimate pending direct simulation. Treat it as provisional rather than a fully simulated measurement.
-
 The transient presentation reports six CBL output pulses for the shown Q = 1 case and four for the shown Q = 0 case. These are observations from the presented waveforms, not a substitute for a complete truth-table sweep.
 
 For corner-by-corner tables, waveform interpretation and open items, see [results notes](docs/results.md) and [methodology](docs/methodology.md).
@@ -80,7 +78,6 @@ For corner-by-corner tables, waveform interpretation and open items, see [result
 | **Python (supporting scripts only)** | Optional post-processing, tabulation and plotting of exported numerical results; not the circuit-design or simulation engine |
 | **Git / GitHub** | Versioning and documentation |
 
-Python is a supporting analysis/automation tool where scripts are provided. The core engineering work is circuit design and simulation in the EDA flow.
 
 ## Repository structure
 
